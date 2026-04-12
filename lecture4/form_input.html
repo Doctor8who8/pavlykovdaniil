@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Создание форм</title>
+<meta charset="UTF-8">
+</head>
+<body bgcolor=navy text=lime>
+<hr color="red">
+<center>
+<font color=red><H2> ПОЛЯ ВВОДА<br> ЭЛЕМЕНТ INPUT</h2></font>
+</center>
+
+<form action="mailto:name@server.domen" method="get">
+    <h3>Ввод текстовой строки </h3>
+    <input type="text" size=50>
+    
+    <h3>Ввод пароля</h3>
+    <input type="password">
+    
+    <h3>Флажки</h3>
+    <input type="checkbox" name="F001" checked>
+    <input type="checkbox" name="F001">
+    
+    <h3>Переключатели</h3>
+    <input type="radio" name="s001" value="Первый">
+    <input type="radio" name="s001" value="Второй">
+    <input type="radio" name="s001" value="Третий" checked>
+    
+    <h3>Кнопка подтверждения ввода</h3>
+    <input type="submit" value="submit">
+    
+    <h3>Кнопка с изображением</h3>
+    <input type="image" src="knopka.jpg">
+    
+    <h3>Кнопка очистки формы</h3>
+    <input type="reset" value="reset">
+    
+    <h3>Файл</h3>
+    <input type="file" name="photo" accept="image/*">
+</form>
+</body>
+</html>

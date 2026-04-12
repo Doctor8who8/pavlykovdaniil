@@ -1,0 +1,59 @@
+<html>
+<body bgcolor=blue>
+<center><font size=6 color=red><i> ПРИМЕР ФОРМЫ </i></font></center>
+<p>
+<hr color=red>
+<table border=3 bgcolor=lime>
+<form action="mailto:name@server.domen" method="post">
+    <tr>
+        <td> <label for="imya1">Имя: </label> </td>
+        <td> <input type="text" id="imya1"> </td>
+    </tr>
+    <tr>
+        <td> <label for="familiya1">Фамилия: </label> </td>
+        <td> <input type="text" id="familiya1"> </td>
+    </tr>
+    <tr>
+        <td> <label for="e-mail1">e-mail: </label> </td>
+        <td> <input type="text" id="email1"> </td>
+    </tr>
+    <tr>
+        <td> Где Вы учитесь: </td>
+        <td> 
+            <select>
+                <option>Школа</option>
+                <option>Лицей</option>
+                <option>Техникум</option>
+                <option>Колледж</option>
+            </select> 
+        </td>
+    </tr>
+    <tr>
+        <td> Являетесь ли Вы выпускником: </td>
+        <td>
+            <input type="checkbox" name="f1" value="Да">Да
+            <input type="checkbox" name="f1" value="Нет">Нет
+        </td>
+    </tr>
+    <tr>
+        <td> Пол: </td>
+        <td>
+            &nbsp;&nbsp;
+            <input type="radio" name="pol1" value="Male">M&nbsp;
+            <input type="radio" name="pol1" value="FeMale">Ж
+        </td>
+    </tr>
+    <tr>
+        <td>Дополнительная информация:</td>
+        <td> <textarea rows=5 cols=30></textarea> </td>
+    </tr>
+    <tr>
+        <td align="bottom">
+            <input type="submit" value="send">
+            <input type="reset" value="reset">
+        </td>
+    </tr>
+</form>
+</table>
+</body>
+</html>
