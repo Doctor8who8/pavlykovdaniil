@@ -1,0 +1,78 @@
+<div class="example-section">
+    <h2>Многострочное текстовое поле</h2>
+    <textarea cols=30 rows=3> 
+    В этом текстовом поле допустимо делать переносы строк, которые сохранятся при отправке данных на сервер. 
+    </textarea>
+</div>
+
+<div class="example-section">
+    <h2>поля со списком без атрибутов size и multiple</h2>
+    <select>
+      <option>БДиСУБД</option>
+      <option>КС</option>
+      <option selected>ПССИП</option>
+      <option>ППО</option>
+    </select>
+</div>
+
+<div class="example-section">
+    <h2>поля со списком без атрибутов size и с атрибутом multiple</h2>
+    <select multiple>
+      <option>БДиСУБД</option>
+      <option>КС</option>
+      <option selected>ПССИП</option>
+      <option>ППО</option>
+    </select>
+</div>
+
+<div class="example-section">
+    <h2>поля со списком с атрибутами size и multiple и группировкой пунктов</h2>
+    <select multiple size=4>
+      <optgroup label='Спец. дисциплины'>
+        <option>БДиСУБД</option>
+        <option>КС</option>
+        <option selected>ПССИП</option>
+      </optgroup>
+      <optgroup label='Доп. дисциплины'>
+        <option>ППО</option>
+        <option>Проф. лексика</option>
+      </optgroup>
+    </select>
+</div>
+
+<div class="example-section">
+    <h2>пример вставки в веб-документ сгруппированных элементов</h2>
+    <fieldset title="4 курс">
+      <legend align="right">Спец. дисциплины</legend>
+      <div>БД и СУБД</div>
+      <div>КС</div>
+      <div>ПССИП</div>
+    </fieldset>
+</div>
+
+<div class="example-section">
+    <h2>пример использования идентификатора id для элемента формы и указание его значения в атрибуте for тега label</h2>
+    <label for="SP">Специальность</label> <input id="SP">
+</div>
+
+<div class="example-section">
+    <h2>пример помещения элемента внутрь контейнера label</h2>
+    <label>Специальность <input></label>
+</div>
+
+<div class="example-section">
+    <h2>Кнопка с изображением и надписью</h2>
+    <button value="test HTML" type=button>
+      <img src='image/5.png' width=70><br> Начать ТЕСТ
+    </button>
+</div>
+
+<div class="example-section">
+    <h2>Текстовое поле со списком вариантов</h2>
+    <input list="kyrs">
+    <datalist id="kyrs">
+      <option value="1-2"></option>
+      <option value="3"></option>
+      <option value="4"></option>
+    </datalist>
+</div>
