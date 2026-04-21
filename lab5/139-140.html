@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Родственные селекторы</title>
+    <style type='text/css'>
+        /* Все h3, идущие после p */
+        p ~ h3 { 
+            width: 260px;
+            height: 80px;
+            overflow-y: scroll; /* горизонтальная полоса прокрутки */
+            scrollbar-arrow-color: fuchsia; /* цвет стрелок */
+            scrollbar-face-color: blue; /* цвет бегунка */
+            scrollbar-base-color: aqua; /* цвет фона полосы прокрутки */
+            border: solid aqua;
+            padding: 6px; 
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <h3>Виды селекторов.</h3>
+        <div>Родственные селекторы относятся к группе... <h3>...сложных селекторов</h3></div>
+        <h3>Свойства блока объявлений распространяются не на все теги &lt;h3&gt;, которые расположены в контейнере &lt;p&gt;.</h3>
+    </p>
+</body>
+</html>

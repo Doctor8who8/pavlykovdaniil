@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Контекстный селектор</title>
+    <style type='text/css'>
+        a { 
+            color: white; 
+            background-color: magenta; 
+            padding: 10px; /* внутренний отступ */ 
+        }
+        .menu { 
+            width: 100%; 
+            text-align: center; 
+        }
+        /* Стили только для ссылок внутри блока с классом menu */
+        .menu a { 
+            width: 50px;
+            display: inline-block; /* отображение в виде блока */
+            text-decoration: none;
+            border: solid 3px white; /* обрамление */
+            -moz-hyphens: auto; /* расстановка переносов */
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto; /* обеспечение кроссбраузерности */
+        }
+    </style>
+</head>
+<body>
+    <p class="menu">
+        <a href="2_11.html">селектор тега</a>
+        <a href="2_12.html">селектор атрибута</a>
+        <a href="2_13.html">селектор класса</a>
+    </p>
+    <a href="2_10.html">универсальный селектор</a>
+</body>
+</html>
