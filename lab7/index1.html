@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивное меню</title>
+    <style>
+        /* Сбрасываем отступы по умолчанию для чистоты верстки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- БАЗОВЫЕ СТИЛИ (ДЛЯ ШИРОКОГО ЭКРАНА) --- */
+        div.MenuLevel1 {
+            width: 100%;
+        }
+
+        /* Главные пункты меню (горизонтальные) */
+        div.MenuLevel1 > div {
+            background-color: blue; /* Синий фон */
+            color: white;
+            border: 2px solid yellow; /* Желтая рамка */
+            position: relative;
+            cursor: pointer;
+            float: left; /* Выстраиваем элементы в ряд по горизонтали */
+            width: 130px; /* Ширина одного пункта */
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Контейнер подменю */
+        div.MenuLevel2 {
+            width: 130px;
+            display: none; /* Скрываем подменю по умолчанию */
+        }
+
+        /* Пункты подменю (Завтрак, Обед, Ужин) */
+        div.MenuLevel2 > div {
+            background-color: blue;
+            color: white;
+            border: 2px solid yellow;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Поведение при наведении (Широкий экран: выпадение ВНИЗ) */
+        div.MenuLevel1 > div:hover div.MenuLevel2 {
+            display: block; /* Показываем подменю */
+            position: absolute;
+            left: -2px; /* Сдвигаем на толщину рамки для ровного стыка */
+            top: 100%; /* Подменю открывается ровно под пунктом меню */
+            z-index: 1;
+        }
+
+        /* --- АДАПТИВНОСТЬ (ДЛЯ УЗКОГО ЭКРАНА) --- */
+        /* Точка перехода: 780px (6 блоков по 130px) */
+        @media all and (max-width: 780px) {
+            
+            /* Главные пункты меню (становятся вертикальными) */
+            div.MenuLevel1 > div {
+                float: none; /* Отменяем выстраивание в ряд */
+                background-color: #fff0f5; /* Светло-розовый/белый фон */
+                color: red; /* Красный текст */
+                border: 1px solid red; /* Красная рамка */
+                margin-bottom: 2px;
+            }
+
+            /* Пункты подменю */
+            div.MenuLevel2 > div {
+                background-color: #fff0f5;
+                color: red;
+                border: 1px solid red;
+            }
+
+            /* Поведение при наведении (Узкий экран: выпадение ВПРАВО) */
+            div.MenuLevel1 > div:hover div.MenuLevel2 {
+                display: block;
+                position: absolute;
+                left: 100%; /* Подменю открывается справа от основного пункта */
+                top: 0; /* На том же уровне по высоте */
+                z-index: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="MenuLevel1">
+        <div>Понедельник
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        <div>Вторник
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        <div>Среда
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        <div>Четверг
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        <div>Пятница
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        <div>Суббота
+            <div class="MenuLevel2">
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
