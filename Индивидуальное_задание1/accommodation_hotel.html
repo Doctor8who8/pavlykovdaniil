@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Accommodation at a Hotel</title>
+</head>
+<body>
+
+  <!-- Якорь в начало страницы -->
+  <a name="top"></a>
+
+  <!-- Бегущая строка: название тематического контроля -->
+  <marquee>Тематический контроль: Accommodation at a Hotel</marquee>
+
+  <!-- Заголовок: каждое слово другим цветом -->
+  <h1 style="text-align: center;">
+    <span style="color: red;">ACCOMODATION</span>
+    <span style="color: blue;">AT</span>
+    <span style="color: green;">A</span>
+    <span style="color: orange;">HOTEL</span>
+  </h1>
+
+  <!-- 1) Перечёркнутый шрифт, чередование цветов слов -->
+  <p>
+    <s><span style="color: red;">Can</span> <span style="color: blue;">I</span> <span style="color: green;">have</span> <span style="color: orange;">a</span> <span style="color: purple;">double</span> <span style="color: red;">room</span> <span style="color: blue;">from</span> <span style="color: green;">now</span> <span style="color: orange;">until</span> <span style="color: purple;">Monday?</span></s>
+  </p>
+
+  <!-- 2) Выравнивание по правому краю, "overlooking the sea" — верхний индекс -->
+  <p style="text-align: right;">
+    You can have Room 5, <sup>overlooking the sea</sup>.
+  </p>
+
+  <!-- 3) Курсив, размер +3, изменение направления текста (справа налево) -->
+  <p style="font-style: italic; font-size: larger; direction: rtl;">
+    What does it cost?
+  </p>
+
+  <!-- 4) Шрифт печатной машинки, перенос строки после слова "not" -->
+  <p style="font-family: 'Courier New', Courier, monospace;">
+    40000 lire a day, not<br>counting the service.
+  </p>
+
+  <!-- 5) По центру, заголовок 2 -->
+  <h2 style="text-align: center;">Can I have a look at this room, please?</h2>
+
+  <!-- 6) Тег <pre> -->
+  <pre>Yes, of course. Come this way.</pre>
+
+  <!-- 7) Большой шрифт, запрет переноса строки браузером -->
+  <p style="font-size: xx-large; white-space: nowrap;">
+    Can you show me something a little cheaper, but also with a view of the sea?
+  </p>
+
+  <!-- 8) Маленький шрифт, Courier, зелёный; "of course" — нижний индекс -->
+  <p style="font-size: small; font-family: 'Courier New', Courier, monospace; color: green;">
+    Yes, <sub>of course</sub>. I won't keep you a moment.
+  </p>
+
+  <hr>
+
+  <!-- Многоуровневый список -->
+  <p style="margin: 0;">Пункт 1</p>
+  <ul style="list-style-type: none; margin-top: 0;">
+    <li>
+      <ol type="A">
+        <li>Пункт 1.1
+          <ul style="list-style-type: square;">
+            <li>Пункт 1.1.1</li>
+            <li>Пункт 1.1.2</li>
+            <li>Пункт 1.1.3</li>
+          </ul>
+        </li>
+        <li>Пункт 1.2
+          <ul style="list-style-type: circle;">
+            <li>Пункт 1.2.1</li>
+            <li>Пункт 1.2.2</li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+  </ul>
+
+  <p style="margin: 0;">Пункт 2</p>
+  <ul style="list-style-type: none; margin-top: 0;">
+    <li>
+      <ol type="1">
+        <li>Пункт 1
+          <ol type="1">
+            <li>Пункт 2.1.1</li>
+            <li>Пункт 2.1.2</li>
+            <li>Пункт 2.1.3</li>
+          </ol>
+        </li>
+        <li>Пункт 2
+          <ul style="list-style-type: disc;">
+            <li>Пункт 2.2.1</li>
+            <li>Пункт 2.2.2</li>
+            <li>Пункт 2.2.3</li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+  </ul>
+
+  <dl>
+    <dt>Пункт 3</dt>
+    <dd>Определение пункта 3</dd>
+    <dd>Другое определение пункта 3</dd>
+  </dl>
+
+  <hr>
+
+  <!-- Якорь в конец страницы -->
+  <a name="bottom"></a>
+
+  <!-- Картинка-ссылка, нажатие переходит в конец страницы -->
+  <p style="text-align: center;">
+    <a href="#bottom">
+      <img src="picture.jpg" alt="Место для картинки" width="150" height="100">
+    </a>
+  </p>
+
+  <!-- Ссылка, переходящая к ссылке * -->
+  <p><a href="#star">Ссылка, по которой осуществляется переход к ссылке *</a></p>
+
+  <!-- Ссылка на электронную почту -->
+  <p><a href="mailto:example@mail.com">Ссылка на адрес электронной почты</a></p>
+
+  <!-- Ссылка на сайт БГПУ, открывается в новом окне -->
+  <p>
+    <a href="http://www.bspu.unibel.by" target="_blank">
+      Ссылка на адрес Белорусского государственного педагогического университета
+    </a>
+  </p>
+
+  <!-- Ссылка на файл первого задания -->
+  <p><a href="zadanie1.htm">Ссылка на файл с расширением htm, подготовленный в первом задании</a></p>
+
+  <!-- Ссылка * (якорь) -->
+  <p><a name="star">Ссылка *</a></p>
+
+  <!-- Ссылка в начало страницы -->
+  <p><a href="#top">Ссылка, по которой осуществляется переход в начало страницы</a></p>
+
+</body>
+</html>
+
+  <hr>
+
+  <!-- ТАБЛИЦА 1 -->
+  <p style="text-align: center;">Заголовок таблицы</p>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <!-- Строка 1: Заголовок 1 (3 колонки) | Заголовок 2 (1 колонка) -->
+    <tr>
+      <th colspan="3" style="text-align: center;">Заголовок 1</th>
+      <th style="text-align: center;">Заголовок 2</th>
+    </tr>
+    <!-- Строка 2: Ячейка 1 | Ячейка 2 (2 колонки, по центру) | Ячейка 3 (вправо) -->
+    <tr>
+      <td>Ячейка 1</td>
+      <td colspan="2" style="text-align: center;">Ячейка 2</td>
+      <td style="text-align: right;">Ячейка 3</td>
+    </tr>
+    <!-- Строка 3: Ячейка 4 (rowspan=2) | вложенная таблица (2 колонки) | Ячейка 6 (rowspan=2) -->
+    <tr>
+      <td rowspan="2">Ячейка 4</td>
+      <td colspan="2">
+        <!-- Вложенная таблица 2 с жирной рамкой -->
+        <table border="3" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
+          <tr>
+            <td style="border: 3px solid black;">&nbsp;</td>
+            <td style="border: 3px solid black; text-align: center;">Заголовок 1<br>Таблицы 2</td>
+          </tr>
+          <tr>
+            <td style="border: 3px solid black;">Заголовок 2<br>Таблицы 2</td>
+            <td style="border: 3px solid black;">Ячейка 1<br>Таблицы 2</td>
+          </tr>
+          <tr>
+            <td style="border: 3px solid black;">Заголовок 3<br>Таблицы 2</td>
+            <td style="border: 3px solid black;">Ячейка 2<br>Таблицы 2</td>
+          </tr>
+        </table>
+      </td>
+      <td rowspan="2">Ячейка 6</td>
+    </tr>
+    <!-- Строка 4: Ячейка 5 (rowspan=2) | пустая ячейка под вложенной таблицей | Ячейка 7 (вправо) -->
+    <tr>
+      <td>Ячейка 5</td>
+      <td colspan="2" style="text-align: right;">Ячейка 7</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <!-- ТАБЛИЦА 2 — Форма -->
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td colspan="3">
+        <input type="submit" value="send">
+        <input type="button" value="кнопка с надписью и рисунком">
+        <input type="reset" value="reset">
+      </td>
+    </tr>
+    <tr>
+      <td>Вопрос 1</td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
+    <tr>
+      <td>Вопрос 2</td>
+      <td><input type="checkbox"> Ответ 2.1</td>
+      <td><input type="checkbox"> Ответ 2.2</td>
+    </tr>
+    <tr>
+      <td>Вопрос 3</td>
+      <td><input type="text"></td>
+      <td><input type="button" value="Обзор"></td>
+    </tr>
+    <tr>
+      <td>Вопрос 4</td>
+      <td colspan="2">
+        <select>
+          <option>Ответ 4.1</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Вопрос 5</td>
+      <td><input type="radio" name="q5"> Ответ 5.1</td>
+      <td><input type="radio" name="q5"> Ответ 5.2</td>
+    </tr>
+    <tr>
+      <td>Вопрос 6</td>
+      <td colspan="2">
+        <select size="3">
+          <option>Ответ 6.1</option>
+          <option>Ответ 6.2</option>
+          <option>Ответ 6.3</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Дополнительная информация</td>
+      <td colspan="2"><textarea rows="4" cols="40"></textarea></td>
+    </tr>
+  </table>
