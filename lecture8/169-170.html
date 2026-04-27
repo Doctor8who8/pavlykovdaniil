@@ -1,0 +1,25 @@
+<html>
+ <head>
+ <title> анимацци в CSS </title>
+ <style>
+@keyframes around {
+ 0%, 100% { left: 0; top: 0; }
+ 25% { left: 240px; top: 0; }
+ 50% { left: 0; top: 140px; }
+ 75% { left: 240px; top: 140px; }
+}
+h3 { animation: around 8s linear 0s infinite;
+ background: aqua;
+ color: white;
+ height: 24px;
+ width: 200px;
+ margin: 5%;
+ position: absolute;
+ text-align: center; }
+h3:hover { animation-play-state: paused;}
+ </style>
+ </head>
+ <body>
+ <h3> CSS-анимации </h3>
+ </body>
+</html>

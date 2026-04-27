@@ -1,0 +1,25 @@
+<html>
+ <head>
+ <title> слайдер на CSS </title>
+ <style>
+@keyframes im {
+ 25% { background-image: url("../1/image/5.png"); }
+ 50% { background-image: url("../1/image/5-1.png"); }
+ 75% { background-image: url("../1/image/5-11.png"); }
+ to { background-image: url("../1/image/5-21.png"); }
+}
+p { animation-name: im;
+ animation-duration: 4s;
+ animation-timing-function: step-start;
+ animation-iteration-count: infinite;
+ width: 350px;
+ height: 150px;
+ background-position: center center;
+ background-repeat: no-repeat;
+ border: dotted 3px lime; }
+ </style>
+ </head>
+ <body>
+ <p> </p>
+ </body>
+</html>
