@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Ссылки — Accommodation at a Hotel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <marquee>Тематический контроль: Accommodation at a Hotel</marquee>
+    </div>
+    <div id="sidebar">
+      <b>Навигация:</b><br><br>
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Диалог (текст)</a>
+      <a href="page2.html">Списки</a>
+      <a href="page3.html" class="active">Ссылки</a>
+      <a href="page4.html">Таблицы и форма</a>
+    </div>
+    <div id="content">
+      <h2>Ссылки</h2>
+
+      <!-- Якорь в начало страницы -->
+      <a name="top"></a>
+
+      <!-- Картинка-ссылка, переходит в конец страницы -->
+      <p style="text-align: center;">
+        <a href="#bottom">
+          <img src="picture.jpg" alt="Место для картинки" width="150" height="100">
+        </a>
+        <br><small>Нажатием на картинку осуществляется переход в конец страницы</small>
+      </p>
+
+      <!-- Ссылка к якорю * -->
+      <p><a href="#star">Ссылка, по которой осуществляется переход к ссылке *</a></p>
+
+      <!-- Ссылка на e-mail -->
+      <p><a href="mailto:example@mail.com">Ссылка на адрес электронной почты</a></p>
+
+      <!-- Ссылка на БГПУ, новое окно -->
+      <p>
+        <a href="http://www.bspu.unibel.by" target="_blank">
+          Ссылка на адрес Белорусского государственного педагогического университета
+        </a>
+      </p>
+
+      <!-- Ссылка на файл первого задания -->
+      <p><a href="zadanie1.htm">Ссылка на файл с расширением htm, подготовленный в первом задании</a></p>
+
+      <!-- Якорь * -->
+      <p><a name="star">Ссылка *</a></p>
+
+      <!-- Якорь в конец страницы -->
+      <a name="bottom"></a>
+
+      <!-- Ссылка в начало страницы -->
+      <p><a href="#top">Ссылка, по которой осуществляется переход в начало страницы</a></p>
+    </div>
+    <div id="footer">
+      Сайт по индивидуальному заданию &nbsp;|&nbsp; Accommodation at a Hotel
+    </div>
+  </div>
+</body>
+</html>

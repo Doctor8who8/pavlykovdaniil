@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Таблицы и форма — Accommodation at a Hotel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <marquee>Тематический контроль: Accommodation at a Hotel</marquee>
+    </div>
+    <div id="sidebar">
+      <b>Навигация:</b><br><br>
+      <a href="index.html">Главная</a>
+      <a href="page1.html">Диалог (текст)</a>
+      <a href="page2.html">Списки</a>
+      <a href="page3.html">Ссылки</a>
+      <a href="page4.html" class="active">Таблицы и форма</a>
+    </div>
+    <div id="content">
+      <h2>Таблицы</h2>
+
+      <!-- ТАБЛИЦА 1 -->
+      <p style="text-align: center;">Заголовок таблицы</p>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <th colspan="3" style="text-align: center;">Заголовок 1</th>
+          <th style="text-align: center;">Заголовок 2</th>
+        </tr>
+        <tr>
+          <td>Ячейка 1</td>
+          <td colspan="2" style="text-align: center;">Ячейка 2</td>
+          <td style="text-align: right;">Ячейка 3</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Ячейка 4</td>
+          <td colspan="2">
+            <table border="3" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
+              <tr>
+                <td style="border: 3px solid black;">&nbsp;</td>
+                <td style="border: 3px solid black; text-align: center;">Заголовок 1<br>Таблицы 2</td>
+              </tr>
+              <tr>
+                <td style="border: 3px solid black;">Заголовок 2<br>Таблицы 2</td>
+                <td style="border: 3px solid black;">Ячейка 1<br>Таблицы 2</td>
+              </tr>
+              <tr>
+                <td style="border: 3px solid black;">Заголовок 3<br>Таблицы 2</td>
+                <td style="border: 3px solid black;">Ячейка 2<br>Таблицы 2</td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2">Ячейка 6</td>
+        </tr>
+        <tr>
+          <td>Ячейка 5</td>
+          <td colspan="2" style="text-align: right;">Ячейка 7</td>
+        </tr>
+      </table>
+
+      <br>
+      <h2>Форма</h2>
+
+      <!-- ТАБЛИЦА 2 — Форма -->
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="send">
+            <input type="button" value="кнопка с надписью и рисунком">
+            <input type="reset" value="reset">
+          </td>
+        </tr>
+        <tr>
+          <td>Вопрос 1</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td>Вопрос 2</td>
+          <td><input type="checkbox"> Ответ 2.1</td>
+          <td><input type="checkbox"> Ответ 2.2</td>
+        </tr>
+        <tr>
+          <td>Вопрос 3</td>
+          <td><input type="text"></td>
+          <td><input type="button" value="Обзор"></td>
+        </tr>
+        <tr>
+          <td>Вопрос 4</td>
+          <td colspan="2">
+            <select>
+              <option>Ответ 4.1</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Вопрос 5</td>
+          <td><input type="radio" name="q5"> Ответ 5.1</td>
+          <td><input type="radio" name="q5"> Ответ 5.2</td>
+        </tr>
+        <tr>
+          <td>Вопрос 6</td>
+          <td colspan="2">
+            <select size="3">
+              <option>Ответ 6.1</option>
+              <option>Ответ 6.2</option>
+              <option>Ответ 6.3</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Дополнительная информация</td>
+          <td colspan="2"><textarea rows="4" cols="40"></textarea></td>
+        </tr>
+      </table>
+    </div>
+    <div id="footer">
+      Сайт по индивидуальному заданию &nbsp;|&nbsp; Accommodation at a Hotel
+    </div>
+  </div>
+</body>
+</html>
