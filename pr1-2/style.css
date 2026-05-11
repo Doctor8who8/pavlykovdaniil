@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+}
+
+.left-block {
+    width: 15em;
+    background-color: #c8c8c8;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.right-block {
+    flex: 1;
+    background-color: white;
+}
+
+.article {
+    background-color: #bdbdbd;
+    padding: 10px;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+}
+
+.mail-image {
+    width: 120px;
+    float: right;
+}
+
+.footer {
+    background-color: #c8c8c8;
+    padding: 10px;
+    box-sizing: border-box;
+}
