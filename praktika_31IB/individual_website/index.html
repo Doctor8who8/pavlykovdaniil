@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная практика - Веб-программирование</title>
+    <style type="text/css">
+        /* Базовые стили для сброса отступов и шрифта */
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            display: grid;
+            height: 100vh; 
+        }
+
+        /* 1 медиазапрос: устройства до 360px */
+        @media only screen and (max-width: 360px) {
+            body { 
+                font-size: 2vh;
+                grid-template-areas: 
+                    "header"
+                    "nav"
+                    "content"
+                    "sidebar"
+                    "footer";
+                grid-template-rows: auto auto 1fr 100px auto;
+                grid-template-columns: 1fr; 
+            }
+        }
+
+        /* 2 медиазапрос: устройства от 361px до 760px */
+        @media only screen and (min-width: 361px) and (max-width: 760px) {
+            body { 
+                font-size: 2vh;
+                grid-template-areas: 
+                    "header header"
+                    "nav sidebar"
+                    "content content"
+                    "footer footer";
+                grid-template-rows: 100px auto 1fr 60px;
+                grid-template-columns: 3fr 1fr; 
+            }
+        }
+
+        /* 3 медиазапрос: устройства от 761px, портретная ориентация */
+        @media only screen and (min-width: 761px) and (orientation: portrait) {
+            body { 
+                font-size: 2vh;
+                grid-template-areas: 
+                    "header header"
+                    "nav content"
+                    "sidebar content"
+                    "footer footer";
+                grid-template-rows: 100px auto 1fr 60px;
+                grid-template-columns: 1fr 3fr; 
+            }
+        }
+
+        /* 4 медиазапрос: устройства от 761px до 1200px, альбомная ориентация */
+        @media only screen and (min-width: 761px) and (max-width: 1200px) and (orientation: landscape) {
+            body { 
+                font-size: 2.5vh;
+                grid-template-areas: 
+                    "header header header"
+                    "nav content content"
+                    "sidebar content content"
+                    "footer footer footer";
+                grid-template-rows: 100px auto 1fr 60px;
+                grid-template-columns: 1fr 2fr 2fr; 
+            }
+        }
+
+        /* Медиазапрос для больших экранов: от 1201px */
+        @media only screen and (min-width: 1201px) {
+            body { 
+                font-size: 2.5vh;
+                grid-template-areas: 
+                    "header header header"
+                    "nav content sidebar"
+                    "nav content ."
+                    "footer footer footer";
+                grid-template-rows: 100px auto 1fr 60px;
+                grid-template-columns: 1fr 3fr 0.8fr; 
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
+        /* --- Стилизация конкретных блоков (Grid Areas) --- */
+        
+        #header { 
+            grid-area: header; 
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        #header img { height: 70px; object-fit: contain; }
+        #header h1 { font-size: 1.5em; text-align: center; margin: 0; color: #2c3e50; }
+
+        /* Стилизация навигационного меню (CSS выпадающее меню) */
+        #nav { 
+            grid-area: nav; 
+            background-color: #2c3e50; 
+            border-radius: 8px; 
+            padding: 10px;
+        }
+        #nav ul { list-style: none; padding: 0; margin: 0; }
+        #nav > ul > li { position: relative; margin-bottom: 5px; }
+        #nav a { 
+            display: block; 
+            padding: 12px; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        #nav a:hover { background-color: #34495e; }
+        
+        /* Выпадающее подменю */
+        #nav ul ul { 
+            display: none; 
+            position: absolute; 
+            left: 100%; 
+            top: 0; 
+            min-width: 220px; 
+            background-color: #34495e; 
+            border-radius: 4px; 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        #nav ul li:hover > ul { display: block; }
+        #nav ul ul li { margin: 0; border-bottom: 1px solid #2c3e50; }
+
+        #sidebar { 
+            grid-area: sidebar; 
+            background-color: #ecf0f1; 
+            border-radius: 8px; 
+            padding: 15px;
+        }
+        /* Блок для рекламы */
+        .ad-space {
+            background-color: #bdc3c7;
+            border: 2px dashed #7f8c8d;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c3e50;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        #content { 
+            grid-area: content; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            padding: 25px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        .task-list a { color: #2980b9; text-decoration: none; }
+        .task-list a:hover { text-decoration: underline; }
+
+        #footer { 
+            grid-area: footer; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="star_logo.png" alt="Личный логотип">
+        <h1>Учебная практика: Веб-программирование</h1>
+        <img src="mtk.png" alt="Логотип колледжа">
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Задания HTML (Теги, Атрибуты, Таблицы, Ссылки, Мультимедиа)</a>
+                <ul>
+                    <li><a href="../../praktika_31IB/14_05/part_1.html">Часть 1 Python</a></li>
+                    <li><a href="../../praktika_31IB/14_05/part_2.html">Часть 2 Python</a></li>
+                    <li><a href="../../praktika_31IB/14_05/part_3.html">Часть 3 Python</a></li>
+                    <li><a href="../../praktika_31IB/13_05/lesson/main.html">Таблицы (main.html)</a></li>
+                </ul>
+            </li>
+            <li><a href="../../praktika_31IB/15_05/test_css.html">Задания CSS</a></li>
+            <li><a href="../../praktika_31IB/16_05/form_reg.html">Задания Формы</a></li>
+            <li><a href="../../praktika_31IB/18_05/test_javascript.html">Задания JavaScript</a></li>
+            <li><a href="#">Задания Bootstrap</a>
+                <ul>
+                    <li><a href="../../praktika_31IB/20_05/test_bootstrap.html">Вёрстка с Bootstrap 5.3</a></li>
+                    <li><a href="../../praktika_31IB/20_05/index_jquery.html">Эффект падающих снежинок с jQuery</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="sidebar">
+        <div class="ad-space">Место для рекламы</div>
+    </div>
+
+    <div id="content">
+        <h1>Итоги первой недели практики</h1>
+        <p>На данной странице собраны материалы и выполненные задания по разработке веб-страниц.</p>
+
+        <h3>Теоретическая база</h3>
+        <ul>
+            <li><strong>HTML:</strong> Язык гипертекстовой разметки, основанный на использовании тегов и атрибутов для структурирования документа.</li>
+            <li><strong>CSS:</strong> Каскадные таблицы стилей — технология для представления Web-страниц, определяющая цвета, шрифты, выравнивание и оформление.</li>
+            <li><strong>Формы:</strong> Элементы, используемые для отправки данных на сервер и получения данных с сервера (например, элементы <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>).</li>
+            <li><strong>JavaScript:</strong> Язык сценариев, где переменные могут хранить значения различных типов: строки, числа, булевы значения и объекты.</li>
+            <li><strong>Bootstrap:</strong> Бесплатный набор инструментов (фреймворк) с открытым исходным кодом, созданный для быстрой вёрстки сайтов и веб-приложений</li>
+        </ul>
+
+        <h3>Выполненные задания по темам</h3>
+        <ul class="task-list">
+            <li><strong>HTML (Теги, Атрибуты, Таблицы, Ссылки, Мультимедиа):</strong>
+                <ul>
+                    <li><a href="../14_05/part_1.html">Сайт HTML - Часть 1 Python</a></li>
+                    <li><a href="../../praktika_31IB/14_05/part_2.html">Сайт HTML - Часть 2 Python</a></li>
+                    <li><a href="../../../pavlykovdaniil/praktika_31IB/14_05/part_2.html">Сайт HTML - Часть 3 Python</a></li>
+                    <li><a href="../13_05/lesson/main.html">Таблицы (main.html)</a></li>
+                </ul>
+            </li>
+            <li><strong>CSS Введение:</strong> <a href="../15_05/test_css.html">test_css.html</a></li>
+            <li><strong>HTML Формы:</strong> <a href="../16_05/form_reg.html">form_reg.html</a></li>
+            <li><strong>JavaScript (Переменные и Основные операторы):</strong> <a href="../18_05/test_javascript.html">test_javascript.html</a></li>
+            <li><strong>Bootstrap и jQuery:</strong>
+                <ul>
+                    <li><a href="../20_05/test_bootstrap.html">test_bootstap.html</a></li>
+                    <li><a href="../../praktika_31IB/20_05/index_jquery.html">index_jquery.html</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="footer">
+        &copy; Павлюков Даниил Александрович 31 ИБ
+    </div>
+</body>
+</html>

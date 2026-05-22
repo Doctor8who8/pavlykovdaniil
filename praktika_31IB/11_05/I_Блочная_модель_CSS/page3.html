@@ -1,23 +1,85 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ссылки — Accommodation at a Hotel</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ссылки</title>
+<style type='text/css'>
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#container {
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+#header {
+    border: 5px solid orange;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#sidebar {
+    border: 5px solid red;
+    float: left;
+    width: 20%;
+    min-height: 400px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#content {
+    border: 5px solid green;
+    float: left;
+    width: 78%;
+    min-height: 400px;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: left;
+}
+
+#footer {
+    border: 5px solid aqua;
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
 </head>
 <body>
   <div id="container">
+  
     <div id="header">
       <marquee>Accommodation at a Hotel</marquee>
     </div>
+  
     <div id="sidebar">
-      <b>Навигация:</b><br><br>
-      <a href="index.html">Главная</a>
-      <a href="page1.html">Диалог</a>
-      <a href="page2.html">Списки</a>
-      <a href="page3.html" class="active">Ссылки</a>
-      <a href="page4.html">Таблицы и форма</a>
+      <p>Навигация:</p>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="page1.html">Диалог</a></li>
+        <li><a href="page2.html">Списки</a></li>
+        <li><a href="page3.html">Ссылки</a></li>
+        <li><a href="page4.html">Таблицы и форма</a></li>
+      </ul>
     </div>
+  
     <div id="content">
       <h2>Ссылки</h2>
 
@@ -51,15 +113,17 @@
       <!-- Якорь * -->
       <p><a name="star">Ссылка *</a></p>
 
-      <!-- Якорь в конец страницы -->
-      <a name="bottom"></a>
-
       <!-- Ссылка в начало страницы -->
       <p><a href="#top">Ссылка, по которой осуществляется переход в начало страницы</a></p>
+
+      <!-- Якорь в конец страницы -->
+      <a name="bottom"></a>
     </div>
+
     <div id="footer">
       &copy; Павлюков даниил
     </div>
+  
   </div>
 </body>
 </html>
