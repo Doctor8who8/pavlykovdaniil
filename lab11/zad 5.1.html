@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Свойства элемента Button</title>
+<script>
+function propobj(obj) {
+    var result = "";
+    // Перебираем свойства элемента "myButton"
+    for (var i in obj.myButton) {
+        result += "myButton." + i + " = " + obj.myButton[i] + "\n";
+    }
+    obj.data.value = result;
+}
+</script>
+</head>
+<body bgcolor="#f8f8ff">
+<center>
+<h4>Определение свойств объекта "Кнопка"</h4>
+<form name="form1">
+    <input type="button" name="myButton" value="Тестовая кнопка"><hr>
+    
+    <input type="button" value="Выполнить" onClick="propobj(this.form)"><hr>
+    <textarea name="data" cols="40" rows="10"></textarea><hr>
+    <input type="reset" value="Очистить">
+</form>
+</center>
+</body>
+</html>

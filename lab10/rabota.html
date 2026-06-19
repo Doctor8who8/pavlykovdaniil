@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета пользователя</title>
+</head>
+<body>
+
+<script>
+    // 1. Спрашиваем фамилию, имя, отчество (три отдельных prompt)
+    var familiya = prompt("Введите вашу фамилию:", "");
+    var imya = prompt("Введите ваше имя:", "");
+    var otchestvo = prompt("Введите ваше отчество:", "");
+    
+    // 2. Спрашиваем возраст в годах
+    var vozrast = prompt("Введите ваш возраст (в годах):", "");
+    
+    // 3. Спрашиваем пол (confirm - true = мужской, false = женский)
+    var polMuzhskoy = confirm("Ваш пол - мужской?");
+    
+    // Определяем пол текстом
+    var pol;
+    if (polMuzhskoy == true) {
+        pol = "мужской";
+    } else {
+        pol = "женский";
+    }
+    
+    // 4. Вычисляем возраст в днях (приблизительно: возраст * 365)
+    var vozrastVDnyah = vozrast * 365;
+    
+    // 5. Вычисляем, сколько будет через 5 лет
+    var cherez5Let = Number(vozrast) + 5;
+    
+    // 6. Определяем, на пенсии или нет (условно: для мужчин с 65, для женщин с 60)
+    var naPensii = "нет";
+    if (polMuzhskoy == true) {
+        // мужской пол
+        if (vozrast >= 65) {
+            naPensii = "да";
+        }
+    } else {
+        // женский пол
+        if (vozrast >= 60) {
+            naPensii = "да";
+        }
+    }
+    
+    // 7. Формируем ФИО
+    var fio = familiya + " " + imya + " " + otchestvo;
+    
+    // 8. Выводим анкету одним alert
+    alert("ваше ФИО: " + fio + "\n" +
+          "ваш возраст в годах: " + vozrast + "\n" +
+          "ваш возраст в днях: " + vozrastVDnyah + "\n" +
+          "через 5 лет вам будет: " + cherez5Let + "\n" +
+          "ваш пол: " + pol + "\n" +
+          "вы на пенсии: " + naPensii);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа - Вариант 18</title>
+    <script type="text/javascript">
+        // Функция для расчета дохода по вкладу
+        function rasschitat() {
+            // Получаем значения из полей формы и переводим в числа
+            var vklad = parseFloat(document.getElementById("vklad").value);
+            var srok = parseInt(document.getElementById("srok").value);
+            var stavka = parseFloat(document.getElementById("stavka").value);
+
+            // Формула расчета дохода: Вклад * (Ставка / 100) * (Срок в днях / 365 дней в году)
+            var dohod = vklad * (stavka / 100) * (srok / 365);
+            
+            // Расчет общей суммы в конце срока
+            var obshayaSumma = vklad + dohod;
+
+            // Выводим результаты на страницу с округлением до 2 знаков после запятой
+            document.getElementById("rezultatDohod").innerHTML = dohod.toFixed(2);
+            document.getElementById("rezultatSumma").innerHTML = obshayaSumma.toFixed(2);
+        }
+
+        // Функция для обработчика события onSelectStart
+        function zapretVydeleniya() {
+            alert("Выделение текста на странице запрещено скриптом!");
+            return false; // Запрещает выделение текста
+        }
+    </script>
+</head>
+<!-- Добавляем обработчик события onselectstart на весь документ -->
+<body onselectstart="return zapretVydeleniya()">
+
+    <h2>Вычисления дохода по вкладу.</h2>
+    
+    <p><b>Введите исходные данные:</b></p>
+
+    <!-- Форма для ввода данных -->
+    <form name="vkladForm">
+        Величина вклада (руб.) → 
+        <input type="text" id="vklad" value="2500"><br><br>
+        
+        Срок вклада (дней) → 
+        <input type="text" id="srok" value="30"><br><br>
+        
+        Процентная ставка (годовых) → 
+        <input type="text" id="stavka" value="20"><br><br>
+        
+        <!-- Кнопка для запуска вычислений -->
+        <input type="button" value="Посчитать доход" onclick="rasschitat()">
+    </form>
+
+    <br>
+
+    <!-- Блок вывода результатов -->
+    <p>Доход: <span id="rezultatDohod">0.00</span> руб.</p>
+    <p>Сумма по окончании срока вклада: <span id="rezultatSumma">0.00</span> руб.</p>
+
+</body>
+</html>

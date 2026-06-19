@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Замена</title>
+    <script>
+        // 1. Исправлено объявление переменной (добавлен var и пробел)
+        var myString = "Поиск заданной буквы в заданном тексте";
+
+        function findLetter(txt, letter) {
+            var pos = 0;
+            var num = 0;
+            var i = 0;
+
+            // Цикл продолжается, пока на текущей позиции находится символ
+            while (pos != -1) {
+                pos = txt.indexOf(letter, i);
+                
+                if (pos != -1) {
+                    num = num + 1;
+                    i = pos + 1; // Сдвигаем указатель поиска дальше за найденную букву
+                }
+            }
+            
+            // 2. Логическая ошибка ИСПРАВЛЕНА: return вынесен ИЗ цикла while
+            return num;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // Выведет количество букв в строке (в исходном тексте их 5)
+        document.write("Количество найденных букв: ", findLetter(myString, "т"));
+    </script>
+</body>
+</html>

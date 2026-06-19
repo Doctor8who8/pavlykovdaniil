@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>НОД и НОК трех чисел</title>
+<script>
+// Отличный от приведенного алгоритм НОД (вычитание)
+function nod_alt(a, b) {
+    while (a != b) {
+        if (a > b) {
+            a = a - b;
+        } else {
+            b = b - a;
+        }
+    }
+    return a;
+}
+
+// НОД трех чисел: НОД(a, b, c) = НОД(НОД(a, b), c)
+function calc_nod3(obj) {
+    var n1 = Number(obj.num1.value);
+    var n2 = Number(obj.num2.value);
+    var n3 = Number(obj.num3.value);
+    
+    var res1 = nod_alt(n1, n2);
+    var final_nod = nod_alt(res1, n3);
+    
+    obj.res_nod.value = final_nod;
+}
+
+// Функция для нахождения НОК двух чисел
+function nok2(a, b) {
+    return (a * b) / nod_alt(a, b);
+}
+
+// НОК трех чисел: НОК(a, b, c) = НОК(НОК(a, b), c)
+function calc_nok3(obj) {
+    var n1 = Number(obj.num1.value);
+    var n2 = Number(obj.num2.value);
+    var n3 = Number(obj.num3.value);
+    
+    var res1 = nok2(n1, n2);
+    var final_nok = nok2(res1, n3);
+    
+    obj.res_nok.value = final_nok;
+}
+</script>
+</head>
+<body>
+<h4>НОД и НОК трех чисел</h4>
+<form name="form1">
+    Введите число 1: <input type="text" name="num1" size="8"><br>
+    Введите число 2: <input type="text" name="num2" size="8"><br>
+    Введите число 3: <input type="text" name="num3" size="8"><br><br>
+    
+    <input type="button" value="Вычислить НОД" onClick="calc_nod3(this.form)">
+    Результат: <input type="text" name="res_nod" size="8"><hr>
+    
+    <input type="button" value="Вычислить НОК" onClick="calc_nok3(this.form)">
+    Результат: <input type="text" name="res_nok" size="8"><hr>
+    
+    <input type="reset" value="Отменить">
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Задаем выводимый текст
+        var scrtxt = "Мы на многае не адважваемся не таму, што яно складанае;" +
+            " яно складанае менавіта таму, што мы на яго не адважваемся." +
+            " (Сенека (4 да н.э. – 65 н.э.), рымскі палітічны дзеяч, філосаф і пісьменнік)" +
+            " Недастаткова, каб выхавание толькі не псавала нас," +
+            " трэба, каб яно мяняла нас у лепшы бок. " +
+            "(Мішэль дэ Мантэнь (1533-1592), французскі філосаф)";
+
+        var _length = scrtxt.length; 
+        var _width = 60; 
+        var pos = -(_width + 2); 
+
+        function scroll() {
+            // Сдвигаем позицию на один шаг
+            pos++;
+
+            // Вычисляем, какая часть текста будет видима
+            var scroller = "";
+            if (pos == _length) {
+                pos = -(_width + 2);
+            }
+
+            // Если текст не достиг пока левого края, 
+            // то необходимо добавить несколько пробелов
+            if (pos < 0) { 
+                var i; // Выносим переменную, чтобы использовать ее ниже
+                for (i = 1; i <= Math.abs(pos); i++) {
+                    scroller = " " + scroller;
+                }
+                scroller = scrtxt.substring(0, _width - i + 1) + scroller;
+            } else {
+                scroller = scrtxt.substring(pos, _width + pos);
+            }
+
+            // [ДОПИСАННАЯ СТРОКА]: выводим текст в блочный элемент
+            document.getElementById("marquee").innerText = scroller;
+
+            // Вновь обращаемся к функции спустя 100 миллисекунд 
+            setTimeout(scroll, 100); // Передаем ссылку на функцию вместо строки (современный стандарт)
+        }
+    </script>
+</head>
+<body onLoad="scroll()">
+
+    <div id="marquee" style="font-family: monospace; white-space: pre; background: #f0f0f0; padding: 10px; width: 500px; overflow: hidden;"></div>
+
+</body>
+</html>

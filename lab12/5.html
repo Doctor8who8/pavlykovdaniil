@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let user = 'Саша'; // Внешняя переменная
+
+function showMess() {
+    user = 'Маша'; // Изменение внешней переменной!
+    let message = 'Привет, я ' + user;
+    alert(message); // Выведет: "Привет, я Маша"
+}
+
+alert(user); // Выведет "Саша" (до вызова функции)
+showMess();  // Функция изменит глобальную переменную user
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вычисление площади круга без округления</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <script>
+        // Функция теперь корректно возвращает результат
+        function square(n) {
+            var result = 0;
+            result = n * n;
+            return result; 
+        }
+
+        // Исправлены фигурные скобки
+        function square1(n) {
+            var result = 0;
+            result = n * n;
+            return result;
+        }
+
+        // Оптимизированный вариант в одну строку
+        function square2(n) {
+            return n * n;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // Проверка работы функций для отдельных чисел
+        document.write("Квадрат 3: ", square(3));
+        document.write("<br>");
+        document.write("Квадрат 5: ", square1(5));
+        document.write("<br>");
+        document.write("Квадрат 7: ", square2(7));
+        document.write("<br><br>");
+
+        // Вывод таблицы площадей круга
+        document.write("<table border='1' width='600'><tr><th>Радиус (число)</th><th>Площадь круга</th></tr>");
+        
+        // Исправлена кириллическая 'і' на латинскую 'i' во всем цикле
+        for (var i = 0; i < 100; i++) {
+            document.write("<tr><th>" + i + "</th><th>" + (square1(i) * Math.PI) + "</th></tr>");
+        }
+        
+        document.write("</table>");
+    </script>
+</body>
+</html>

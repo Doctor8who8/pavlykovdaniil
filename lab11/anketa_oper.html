@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Анкета (оператор ?:)</title>
+</head>
+<body>
+    <script>
+        // Спрашиваем ФИО
+        var lastName = prompt("Введите вашу фамилию:");
+        var firstName = prompt("Введите ваше имя:");
+        var patronymic = prompt("Введите ваше отчество:");
+        
+        // Возраст
+        var ageStr = prompt("Введите ваш возраст в годах:");
+        var age = Number(ageStr);
+        
+        // Пол
+        var isMale = confirm("ваш пол - мужской?");
+
+        // Обработка пола через условный оператор ?:
+        var genderText = isMale ? "мужской" : "женский";
+
+        // Вычисления
+        var ageInDays = age * 365;
+        var ageIn5Years = age + 5;
+
+        // Определяем пенсию через ?:
+        var isPensioner = isMale ? (age >= 65 ? "да" : "нет") : (age >= 60 ? "да" : "нет");
+
+        // Склеиваем итоговую строку
+        var result = "ваше ФИО: " + lastName + " " + firstName + " " + patronymic + "\n" +
+                     "ваш возраст в годах: " + age + "\n" +
+                     "ваш возраст в днях: " + ageInDays + "\n" +
+                     "через 5 лет вам будет: " + ageIn5Years + "\n" +
+                     "ваш пол: " + genderText + "\n" +
+                     "вы на пенсии: " + isPensioner;
+
+        // Выводим оператором alert
+        alert(result);
+    </script>
+</body>
+</html>

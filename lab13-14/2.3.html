@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Времясуток</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+<script>
+theTime = new Date();
+theHour = theTime.getHours();
+
+if (18 > theHour) {
+    // Если время меньше 18:00 — фон белый, текст черный
+    document.writeln("<body bgcolor='white' text='Black'>");
+} else {
+    // Если время 18:00 и позже — фон черный, текст белый
+    document.writeln("<body bgcolor='black' text='White'>");
+}
+</script>
+
+    <p>Здесь располагается содержимое страницы, которое меняет цвет в зависимости от времени суток.</p>
+</body>
+</html>

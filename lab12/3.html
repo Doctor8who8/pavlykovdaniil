@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function D(a, b, c) {
+    let d = b*b - 4*a*c;
+    if (d > 0) return "2 корня: D=" + d;
+    else if (d == 0) return "1 корень";
+    else return "корней нет";
+}
+
+let test = D(-4, 2, 1);
+document.writeln(test); // Выведет: 2 корня: D=20
+document.write('<br>');
+test = D(4, 2, 1);
+document.write(test); // корней нет
+</script>
+</body>
+</html>

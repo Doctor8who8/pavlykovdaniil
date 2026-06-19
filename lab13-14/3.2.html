@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Округление результата до k знаков</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <script>
+        function square2(n) {
+            return n * n; // Вычисление квадрата радиуса
+        }
+
+        // Новая функция: принимает число n и количество знаков k
+        function roundToK(n, k) {
+        var factor = Math.pow(10, k); // Находим множитель (например, 10^3 = 1000 для 3 знаков)
+            return Math.round(n * factor) / factor; // Округляем по формуле 
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // Задаем желаемое количество знаков после запятой (например, 4)
+        var k = 4; 
+
+        document.write("<h3>Округление до " + k + " знаков(а) после запятой:</h3>");
+        document.write("<table border='1' width='600'><tr><th>число</th><th>площадь круга</th></tr>");
+        
+        for (var i = 0; i < 100; i++) {
+            var area = square2(i) * Math.PI; // Вычисляем точную площадь 
+            
+            document.write("<tr><th>", i, "</th><th>", roundToK(area, k), "</th></tr>"); 
+        }
+        
+        document.write("</table>");
+    </script>
+</body>
+</html>
